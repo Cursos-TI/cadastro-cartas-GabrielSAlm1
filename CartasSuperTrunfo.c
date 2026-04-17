@@ -4,15 +4,13 @@
 // Tema 1 - Cadastro das cartas
 // Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
 
-int main() {
+int main(){
   // Área para definição das variáveis para armazenar as propriedades das cidades
-
   char estado, codCarta[4], nomeCidade[20], estado2, codCarta2[4], nomeCidade2[20];
   int populacao, numTuristicos, populacao2, numTuristicos2;
-  float pib, area, pib2, area2;
+  float pib, area, pib2, area2, densPop1, densPop2, PIBperCap1, PIBperCap2;
 
   // Área para entrada de dados
-
   printf("Letra estado: ");
   scanf("%c", &estado);
 
@@ -56,8 +54,14 @@ int main() {
   printf("Numero de Pontos Turísticos: ");
   scanf("%d", &numTuristicos2);
 
-  // Área para exibição dos dados da cidade
 
+  densPop1  = populacao / area;
+  densPop2  = populacao2 / area2;
+
+  PIBperCap1 = pib / populacao;
+  PIBperCap2 = pib2 / populacao2;
+
+  // Área para exibição dos dados da cidade
   printf("Carta 1: \n");
   printf("Estado: %c\n", estado);
   printf("Código: %c%s\n", estado, codCarta);
@@ -66,6 +70,8 @@ int main() {
   printf("Área: %.2f km²\n", area);
   printf("PIB: %.2f bilhões de reais\n", pib);
   printf("Número de pontos Turísticos: %d\n", numTuristicos);
+  printf("Densidade Populacional: %.2f \n", densPop1);
+  printf("PIB per Capita: %.2f \n", PIBperCap1);
 
   printf("\nCarta 2: \n");
   printf("Estado: %c\n", estado2);
@@ -75,6 +81,9 @@ int main() {
   printf("Área: %.2f km²\n", area2);
   printf("PIB: %.2f bilhões de reais\n", pib2);
   printf("Número de pontos Turísticos: %d\n", numTuristicos2);
+  printf("Densidade Populacional: %.2f \n", densPop2);
+  printf("PIB per Capita: %.2f \n", PIBperCap2);
 
-return 0;
-} 
+  return 0;
+ 
+}
